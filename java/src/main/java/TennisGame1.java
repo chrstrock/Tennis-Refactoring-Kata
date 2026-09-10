@@ -26,12 +26,12 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            displayScore(score);
+            displayScore();
         }
         return score.toString();
     }
 
-    private void displayScore(StringBuilder score) {
+    private void displayScore() {
         determineScore(score, m_score1);
         score.append("-");
         determineScore(score, m_score2);
