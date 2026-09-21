@@ -20,7 +20,7 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         StringBuilder result = new StringBuilder();
-        int tempScore=0;
+        int tempScore;
         if (m_score1==m_score2)
         {
             result = new StringBuilder(switch (m_score1) {
