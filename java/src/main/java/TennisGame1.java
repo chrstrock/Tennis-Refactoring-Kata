@@ -41,7 +41,10 @@ public class TennisGame1 implements TennisGame {
             for (int i=1; i<3; i++)
             {
                 if (i==1) tempScore = player1Score;
-                else { result.append("-"); tempScore = player2Score;}
+                else {
+                    result.append("-");
+                    tempScore = player2Score;
+                }
                 switch(tempScore)
                 {
                     case 0:
