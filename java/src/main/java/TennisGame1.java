@@ -22,12 +22,7 @@ public class TennisGame1 implements TennisGame {
         StringBuilder score = new StringBuilder();
         if (player1Score == player2Score)
         {
-            result = (switch (player1Score) {
-                case 0 -> "Love-All";
-                case 1 -> "Fifteen-All";
-                case 2 -> "Thirty-All";
-                default -> "Deuce";
-            });
+            result = player1Score < 3 ? getScoreString(player1Score) + "-All" : "Deuce";
         }
         else if (player1Score >=4 || player2Score >=4)
         {
