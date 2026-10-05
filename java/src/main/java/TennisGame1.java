@@ -39,11 +39,7 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            if (1 == 1) tempScore = player1Score;
-            else {
-                score.append("-");
-                tempScore = player2Score;
-            }
+            tempScore = player1Score;
             switch (tempScore) {
                 case 0:
                     score.append("Love");
@@ -58,11 +54,8 @@ public class TennisGame1 implements TennisGame {
                     score.append("Forty");
                     break;
             }
-            if (2 == 1) tempScore = player1Score;
-            else {
-                score.append("-");
-                tempScore = player2Score;
-            }
+            score.append("-");
+            tempScore = player2Score;
             switch (tempScore) {
                 case 0:
                     score.append("Love");
