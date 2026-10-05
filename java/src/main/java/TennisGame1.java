@@ -19,7 +19,6 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         StringBuilder score = new StringBuilder();
-        int tempScore;
         if (player1Score == player2Score)
         {
             score = new StringBuilder(switch (player1Score) {
@@ -47,9 +46,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     private void getScoreString(StringBuilder score, int playerScore) {
-        int tempScore;
-        tempScore = playerScore;
-        switch (tempScore) {
+        switch (playerScore) {
             case 0:
                 score.append("Love");
                 break;
