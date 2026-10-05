@@ -38,27 +38,20 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            getScoreString(score, player1Score);
+            score.append(getScoreString(player1Score));
             score.append("-");
-            getScoreString(score, player2Score);
+            score.append(getScoreString(player2Score));
         }
         return score.toString();
     }
 
-    private void getScoreString(StringBuilder score, int playerScore) {
-        switch (playerScore) {
-            case 0:
-                score.append("Love");
-                break;
-            case 1:
-                score.append("Fifteen");
-                break;
-            case 2:
-                score.append("Thirty");
-                break;
-            case 3:
-                score.append("Forty");
-                break;
-        }
+    private String getScoreString(int playerScore) {
+        return switch (playerScore) {
+            case 0 -> "Love";
+            case 1 -> "Fifteen";
+            case 2 -> "Thirty";
+            case 3 -> "Forty";
+            default -> "";
+        };
     }
 }
