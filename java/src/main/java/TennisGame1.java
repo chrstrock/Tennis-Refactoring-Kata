@@ -2,8 +2,8 @@ public class TennisGame1 implements TennisGame {
     
     private int player1Score = 0;
     private int player2Score = 0;
-    private String player1Name;
-    private String player2Name;
+    private final String player1Name;
+    private final String player2Name;
 
     public TennisGame1(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -39,25 +39,43 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = player1Score;
-                else { score.append("-"); tempScore = player2Score;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score.append("Love");
-                        break;
-                    case 1:
-                        score.append("Fifteen");
-                        break;
-                    case 2:
-                        score.append("Thirty");
-                        break;
-                    case 3:
-                        score.append("Forty");
-                        break;
-                }
+            if (1 == 1) tempScore = player1Score;
+            else {
+                score.append("-");
+                tempScore = player2Score;
+            }
+            switch (tempScore) {
+                case 0:
+                    score.append("Love");
+                    break;
+                case 1:
+                    score.append("Fifteen");
+                    break;
+                case 2:
+                    score.append("Thirty");
+                    break;
+                case 3:
+                    score.append("Forty");
+                    break;
+            }
+            if (2 == 1) tempScore = player1Score;
+            else {
+                score.append("-");
+                tempScore = player2Score;
+            }
+            switch (tempScore) {
+                case 0:
+                    score.append("Love");
+                    break;
+                case 1:
+                    score.append("Fifteen");
+                    break;
+                case 2:
+                    score.append("Thirty");
+                    break;
+                case 3:
+                    score.append("Forty");
+                    break;
             }
         }
         return score.toString();
