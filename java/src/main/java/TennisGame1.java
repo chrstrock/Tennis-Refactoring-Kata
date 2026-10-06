@@ -20,23 +20,27 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         String result;
         StringBuilder score = new StringBuilder();
-        if (player1Score != player2Score) {
-            if (player1Score < 4 && player2Score < 4) {
-                score.append(getScoreString(player1Score));
-                score.append("-");
-                score.append(getScoreString(player2Score));
-                result = score.toString();
-            } else {
+        if (player1Score == player2Score) {
+            result = player1Score < 3 ? getScoreString(player1Score) + "-All" : "Deuce";
+        } else {
+            if (inDeuceState()) {
                 int minusResult = player1Score - player2Score;
                 if (minusResult==1) result = "Advantage player1";
                 else if (minusResult ==-1) result = "Advantage player2";
                 else if (minusResult>=2) result = "Win for player1";
                 else result = "Win for player2";
+            } else {
+                score.append(getScoreString(player1Score));
+                score.append("-");
+                score.append(getScoreString(player2Score));
+                result = score.toString();
             }
-        } else {
-            result = player1Score < 3 ? getScoreString(player1Score) + "-All" : "Deuce";
         }
         return result;
+    }
+
+    private boolean inDeuceState() {
+        return player1Score >= 4 || player2Score >= 4;
     }
 
     private String getScoreString(int playerScore) {
