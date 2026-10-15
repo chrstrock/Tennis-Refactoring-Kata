@@ -3,7 +3,7 @@ public class TennisGame1 implements TennisGame {
     private int player1Score = 0;
     private int player2Score = 0;
 
-    public TennisGame1(String player1Name, String player2Name) {
+    public TennisGame1() {
     }
 
     public void wonPoint(String playerName) {
