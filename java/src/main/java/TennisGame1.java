@@ -15,7 +15,6 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         String result;
-        StringBuilder score = new StringBuilder();
         if (player1Score != player2Score) {
             if (inDeuceState()) {
                 int minusResult = player1Score - player2Score;
@@ -24,10 +23,7 @@ public class TennisGame1 implements TennisGame {
                 else if (minusResult>=2) result = "Win for player1";
                 else result = "Win for player2";
             } else {
-                score.append(getScoreString(player1Score));
-                score.append("-");
-                score.append(getScoreString(player2Score));
-                result = score.toString();
+                result = getScoreString(player1Score)+"-"+getScoreString(player2Score);
             }
         } else {
             result = player1Score < 3 ? getScoreString(player1Score) + "-All" : "Deuce";
